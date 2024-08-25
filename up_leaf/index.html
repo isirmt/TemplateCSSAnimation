@@ -13,6 +13,11 @@
   <meta property="og:image" content="https://isirmt.github.io/TemplateCSSAnimation/up_leaf/ogp.webp">
   <meta property="og:site_name" content="CSSアニメーション">
   <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@isirmt" />
+  <meta name="twitter:title" content="SVG LEAF(Leaf gradually fills up)" />
+  <meta name="twitter:description" content="葉っぱのグラデーションが下から埋まります" />
+  <meta name="twitter:image" content="https://isirmt.github.io/TemplateCSSAnimation/up_leaf/ogp.webp" />
   <meta name="theme-color" content="#f0f8ff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
@@ -21,6 +26,7 @@
       margin: 0;
       color-scheme: light;
     }
+
     .svg_leaf_over {
       position: fixed;
       z-index: 100;
@@ -52,10 +58,12 @@
       animation: leaf_completed .4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
       animation-delay: 1.2s;
     }
+
     .svg_leaf_mask {
       fill: #ececec;
       animation: leaf_back_spawning .15s linear forwards;
     }
+
     .svg_x5F_leaf_path {
       fill: url(#svg_x5F_leaf_g);
       mask: url(#mask1);
@@ -64,9 +72,11 @@
     #svg_x5F_leaf_g stop:first-child {
       stop-color: #00c74c;
     }
+
     #svg_x5F_leaf_g stop:last-child {
       stop-color: #00eba4;
     }
+
     #mask1 rect {
       fill: white;
       animation: maskAnimation 1.2s cubic-bezier(0.7, 0, 0.84, 0) forwards;
@@ -86,41 +96,51 @@
       from {
         transform: scale(1);
       }
+
       to {
         transform: scale(1.2);
       }
     }
+
     @keyframes leaf_back_spawning {
       from {
         opacity: 0;
       }
+
       to {
         opacity: 1;
       }
     }
+
     @keyframes maskAnimation {
       from {
         y: 877.82px;
       }
+
       to {
         y: 0;
       }
     }
+
     @keyframes spinningBox {
       0% {
         opacity: 0;
         transform: scale(0) rotate(0deg);
       }
+
       10% {
         opacity: 1;
         transform: scale(1.1) rotate(36deg);
       }
+
       20% {
         transform: scale(1.1) rotate(72deg);
       }
+
       85% {
         transform: scale(1) rotate(306deg);
       }
+
       100% {
         transform: scale(0) rotate(360deg);
       }
