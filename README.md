@@ -8,8 +8,9 @@
 
 ## コピー方法
 
-`body`タグ内の`<!-- Delete here -->`に付随するソースを消し、`<style>`と共にコピーすると他の場所で利用可能です。
+`body`タグ内の`<!-- Delete here -->`に付随するソースと`<head>`のメタ属性を消し、`<style>`と共にコピーすると他の場所で利用可能です。
 
 ## サンプルリンク
 
 - [Leaf gradually fills up](https://isirmt.github.io/TemplateCSSAnimation/up_leaf/)
+- [Ball bounces and reverses color](https://isirmt.github.io/TemplateCSSAnimation/ball_bounce_fill/)
