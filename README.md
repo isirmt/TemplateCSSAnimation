@@ -14,3 +14,4 @@
 
 - [Leaf gradually fills up](https://isirmt.github.io/TemplateCSSAnimation/up_leaf/)
 - [Ball bounces and reverses color](https://isirmt.github.io/TemplateCSSAnimation/ball_bounce_fill/)
+- [Welcome Text](https://isirmt.github.io/TemplateCSSAnimation/up_welcome/)

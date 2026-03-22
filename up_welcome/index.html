@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Welcome Text</title>
+  <meta name="description" content="「WELCOME」のテキストが見え隠れしたり跳ねたりします">
+  <meta property="og:url" content="https://isirmt.github.io/TemplateCSSAnimation/up_welcome">
+  <meta property="og:title" content="Welcome Text">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="「WELCOME」のテキストが見え隠れしたり跳ねたりします">
+  <meta property="og:image" content="https://isirmt.github.io/TemplateCSSAnimation/up_welcome/ogp.png">
+  <meta property="og:site_name" content="CSSアニメーション">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@isirmt" />
+  <meta name="twitter:title" content="Welcome Text" />
+  <meta name="twitter:description" content="「WELCOME」のテキストが見え隠れしたり跳ねたりします" />
+  <meta name="twitter:image" content="https://isirmt.github.io/TemplateCSSAnimation/up_welcome/ogp.png" />
+  <meta name="theme-color" content="#fafafa">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=LINE+Seed+JP:wght@800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      color-scheme: light;
+    }
+
+    .welcome_over {
+      position: fixed;
+      z-index: 100;
+      width: 100%;
+      height: 100%;
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      row-gap: 3rem;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .welcome_container {
+      border-style: solid;
+      border-width: 0 0 1px 0;
+      border-color: #666;
+      overflow: hidden;
+      padding-top: 1rem;
+      animation: to_transparent 0.3s ease-out 3s forwards;
+    }
+
+    .welcome_container span {
+      display: inline-block;
+      font-size: 3rem;
+      font-family: "LINE Seed JP", sans-serif;
+      line-height: 1;
+      color: #666;
+      position: relative;
+      transform: translateY(4rem);
+      will-change: transform;
+      animation:
+        up 0.7s ease-out forwards,
+        down 0.7s linear 1.5s forwards,
+        to_invisible 0s step-end 3s forwards;
+    }
+
+    .welcome_container span:nth-child(2) {
+      animation-delay: 0.1s, 1.5s, 3s;
+    }
+
+    .welcome_container span:nth-child(3) {
+      animation-delay: 0.15s, 1.5s, 3s;
+    }
+
+    .welcome_container span:nth-child(4) {
+      animation-delay: 0.2s, 1.5s, 3s;
+    }
+
+    .welcome_container span:nth-child(5) {
+      animation:
+        up 0.7s ease-out 1s forwards,
+        landing 0.6s cubic-bezier(.08, .47, .46, 2.84) 2s forwards,
+        to_center 0.5s cubic-bezier(.58,-0.81,.16,1.55) 3s forwards,
+        out 0.3s ease-out 3.6s forwards;
+    }
+
+    .welcome_container span:nth-child(6) {
+      animation-delay: 0.3s, 1.5s, 3s;
+    }
+
+    .welcome_container span:nth-child(7) {
+      animation-delay: 0.35s, 1.5s, 3s;
+    }
+
+    @keyframes up {
+
+      from {
+        transform: translateY(4rem);
+      }
+
+      to {
+        transform: translateY(1rem);
+      }
+    }
+
+    @keyframes landing {
+      0% {
+        transform: translateY(1rem);
+      }
+
+      50% {
+        transform: translateY(-0.2rem) scaleX(70%) scaleY(110%);
+      }
+
+      70% {
+        transform: translateY(0.1rem) scaleX(105%) scaleY(90%);
+      }
+
+      100% {
+        transform: translateY(0.2rem);
+      }
+    }
+
+    @keyframes down {
+      from {
+        transform: translateY(1rem);
+      }
+
+      to {
+        transform: translateY(4rem);
+      }
+    }
+
+    @keyframes to_center {
+      from {
+        transform: translateY(0.2rem) translateX(0);
+      }
+
+      to {
+        transform: translateY(0.2rem) translateX(-2.8rem);
+      }
+    }
+
+    @keyframes to_transparent {
+      from {
+        border-color: #666;
+        overflow: hidden;
+      }
+
+      to {
+        border-color: transparent;
+        overflow: visible;
+      }
+    }
+
+    @keyframes to_invisible {
+      from {
+        visibility: visible;
+      }
+
+      to {
+        visibility: hidden;
+      }
+    }
+
+    @keyframes out {
+      from {
+        transform: translateY(0.2rem) translateX(-2.8rem);
+        opacity: 1;
+      }
+
+      to {
+        transform: translateY(0.2rem) translateX(-2.8rem) scale(175%);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="welcome_over">
+    <!-- Delete here -->
+    <h1 aria-label="hidden" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: none; ">
+      Welcome Text
+    </h1>
+
+    <div class="welcome_container">
+      <span>W</span>
+      <span>E</span>
+      <span>L</span>
+      <span>C</span>
+      <span>O</span>
+      <span>M</span>
+      <span>E</span>
+    </div>
+
+    <!-- Delete here -->
+    <a href="./">Replay</a>
+    <a target="_blank" rel="noopener noreferrer"
+      href="https://github.com/isirmt/TemplateCSSAnimation/blob/main/up_welcome/index.html">View Source</a>
+  </div>
+</body>
+
+</html>
